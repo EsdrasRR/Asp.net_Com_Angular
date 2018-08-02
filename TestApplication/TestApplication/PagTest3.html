@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="scripts/angular.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-app="carApp" ng-controller="carController">
+
+    <select ng-model="carSize">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+    </select>
+    <br />
+    <select ng-model="carNumber">
+        <option value="0">Carro 1</option>
+        <option value="1">Carro 2</option>
+        <option value="2">Carro 3</option>
+    </select>
+    <br />
+
+    {{cars[carSize][carNumber].brand + " " + cars[carSize][carNumber].model}}
+
+    <script>
+        var carApp = angular.module("carApp", []);
+        carApp.controller("carController", function ($scope) {
+            cars =
+            {
+                small:
+                [
+                    { brand: 'Hyundai', model: 'i20' },
+                    { brand: 'Toyota', model: 'echo' },
+                    { brand: 'Suzuki', model: 'alto' }
+                ],
+                medium:
+                [
+                    { brand: 'Honda', model: 'Accord' },
+                    { brand: 'Toyota', model: 'Camry' },
+                    { brand: 'Mitsubishi', model: 'Magna' }
+                ]
+            };
+            $scope.carNumber = "0";
+            $scope.carSize = "small";
+            $scope.cars = cars;
+        }
+            );
+
+    </script>
+
+</body>
+</html>

@@ -5,13 +5,15 @@
 	<meta charset="utf-8" />
     <script src="scripts/angular.js"></script>
 </head>
-<body ng-app ng-init="fontColor; backColor; car={brand:'Hyundai', model:'i20'}" >
+<body ng-app ng-init="fontColor; backColor; number1=3; number5=5; car={brand:'Hyundai', model:'i20'}" >
 
 
     <input type="text" ng-model="fontColor" />
     <input type="text" ng-model="backColor" />
 
     <p style="background-color:{{backColor}}; color:{{fontColor}}"> {{car.brand + " " + car.model}}</p>
+
+    {{number1 + number5}}
 
     <script>
         var carApp = angular.module("CarApp", []);
