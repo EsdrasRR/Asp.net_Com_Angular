@@ -5,8 +5,12 @@
 	<meta charset="utf-8" />
     <script src="scripts/angular.js"></script>
 </head>
-<body ng-app ng-init="name='Eddie'; number1=3; number2=5;" >
+<body ng-app ng-init="name='Eddie'; number1=3; number2=5; color='red'" >
   Hello world!
     {{ name + " is " + number1*number2 + "years old."}}
+
+    <input type="text" ng-model="color" />
+
+    <p style="background-color:{{color}}">Hello the background {{color}}</p>
 </body>
 </html>
