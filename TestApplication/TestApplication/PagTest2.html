@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app="carApp" ng-controller="carController" >
+
+    {{brand}}
+
+    <script>
+        var carApp = angular.module("CarApp", []);
+        carApp.controller("carController", function ($scope)
+        {
+            $scope.brand = "Hyundai";
+        }
+        );
+    </script>
+
+</body>
+</html>
